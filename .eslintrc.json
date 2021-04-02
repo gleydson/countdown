@@ -1,0 +1,92 @@
+{
+  "env": {
+    "es2021": true
+  },
+  "globals": {
+    "__DEV__": "readonly"
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "prettier",
+    "import-helpers"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-use-before-define": "off",
+    "no-underscore-dangle": "off",
+    "camelcase": "off",
+    "no-plusplus": "off",
+    "no-param-reassign": "off",
+    "react/prop-types": "off",
+    "no-unused-expressions": "off",
+    "react/require-default-props": "off",
+    "import/no-named-default": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "import/prefer-default-export": "off",
+    "no-shadow": "off",
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "**/*.test.ts?(x)",
+        "**/*.spec.ts?(x)",
+        "**/mocks/**/*",
+        "**/test-utils.ts?(x)"
+      ]
+    }],
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": true
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          ["/^react$/", "/^react-native$/"],
+          "module",
+          [
+            "/^@(configs|hooks|common|screens|assets|routes|components|constants|services|styles|utils|shared)/"
+          ],
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
